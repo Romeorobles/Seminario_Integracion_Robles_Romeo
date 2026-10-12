@@ -1,0 +1,143 @@
+# ==========================================================
+# .gitignore - Seminario de Integración (Robles Romeo)
+# Proyectos y subproyectos en Python / FastAPI.
+# Los patrones sin "/" al inicio aplican en TODAS las
+# carpetas y subcarpetas del repositorio.
+# ==========================================================
+
+# ---------- Python: bytecode y cache ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ---------- Entornos virtuales ----------
+.venv/
+venv/
+env/
+ENV/
+.env.venv/
+virtualenv/
+.python-version
+.pdm-python
+__pypackages__/
+
+# ---------- Variables de entorno y secretos ----------
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+secrets.json
+
+# ---------- Empaquetado y distribución ----------
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ---------- Herramientas de dependencias ----------
+# (poetry.lock, uv.lock y Pipfile.lock SÍ se suben)
+.pdm-build/
+.uv-cache/
+
+# ---------- Pruebas y cobertura ----------
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+nosetests.xml
+junit*.xml
+
+# ---------- Linters y tipado ----------
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pytype/
+.pyre/
+
+# ---------- FastAPI / Uvicorn / bases de datos locales ----------
+*.log
+logs/
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+celerybeat-schedule
+celerybeat.pid
+*.pid
+uploads/
+media/
+static/uploads/
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---------- Angular / Node.js ----------
+node_modules/
+.angular/
+out-tsc/
+bazel-out/
+.sass-cache/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+connect.lock
+typings/
+/libpeerconnection.log
+testem.log
+e2e/*.js
+e2e/*.map
+
+# ---------- Docker (overrides locales) ----------
+docker-compose.override.yml
+.docker/data/
+
+# ---------- Editores e IDEs ----------
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.spyderproject
+.spyproject
+.ropeproject
+
+# ---------- Sistema operativo ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.directory
+
+# ---------- Archivos locales del asistente ----------
+CLAUDE.md
+.claude/
