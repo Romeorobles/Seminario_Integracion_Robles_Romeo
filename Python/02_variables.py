@@ -40,5 +40,5 @@ print("rosquillas")
 print(rosquillas)
 rosquillas=5+5
 print("rosquillas")
-rosquillas=5+=2
+rosquillas+=2
 print("rosquillas")
