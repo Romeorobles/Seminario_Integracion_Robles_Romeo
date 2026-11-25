@@ -16,7 +16,7 @@ print("Longitud de", equipo1, ":", len(equipo1))
 print("Longitud de", equipo2, ":", len(equipo2))
 
 print("Convertir mayusculas y minusculas")
-grito = "Vamos Liga carajo"
+grito = "Vamos Liga campeón"
 print("Original:", grito)
 print("Mayusculas:", grito.upper())
 print("Minusculas:", grito.lower())
