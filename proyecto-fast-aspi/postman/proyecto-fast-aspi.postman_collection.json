@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "Curso FastAPI + uv",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "4ca04c06-1000-403a-99b8-dfb4d6f8876c"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Root",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": []
+        },
+        "header": []
+      }
+    },
+    {
+      "name": "Romeo (Mensaje)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/romeo",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "romeo"
+          ]
+        },
+        "header": []
+      }
+    },
+    {
+      "name": "Robles (MensajeCompleto)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/robles",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "robles"
+          ]
+        },
+        "header": []
+      }
+    },
+    {
+      "name": "Listar tasks",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/tasks",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "tasks"
+          ]
+        },
+        "header": []
+      }
+    }
+  ]
+}
