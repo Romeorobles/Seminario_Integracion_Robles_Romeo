@@ -1,7 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
 router = APIRouter()
+
+TASKS: list[dict] = []
 
 
 class TaskCreate(BaseModel):
@@ -26,18 +28,18 @@ class TaskRead(BaseModel):
 
 
 
-@task.get("/tasks", response_model=list[TaskRead])
+@router.get("/tasks", response_model=list[TaskRead])
 def list_tasks() -> list[dict]:
     return TASKS
 
 
 
 
-@task.post("/tasks/from-model")
+@router.post("/tasks/from-model")
 def create_from_model(task: TaskCreate) -> dict:
     # model_dump(): instancia de Pydantic -> dict plano de Python
     data = task.model_dump()
-    new_task = {"id": len(TASKS) + 1, "is_completed": False, **data}
+    new_task = {"id": max((t["id"] for t in TASKS), default=0) + 1, "is_completed": False, **data}
     TASKS.append(new_task)
 
     # model_validate(): dict de Python -> instancia validada de Pydantic
@@ -47,7 +49,7 @@ def create_from_model(task: TaskCreate) -> dict:
 
 
 
-@tasks_router.delete("/tasks/{task_id}")
+@router.delete("/tasks/{task_id}")
 def delete_task(task_id: int) -> dict:
     for index, task in enumerate(TASKS):
         if task["id"] == task_id:

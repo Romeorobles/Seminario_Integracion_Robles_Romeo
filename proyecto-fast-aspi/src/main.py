@@ -2,6 +2,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+from routers.task_router import router as task_router
+
 
 class Mensaje(BaseModel):
     texto: str
@@ -13,6 +15,7 @@ class MensajeCompleto(Mensaje):
 
 
 app = FastAPI(title="Curso FastAPI + uv")
+app.include_router(task_router)
 
 
 @app.get("/")
